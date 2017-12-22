@@ -1,0 +1,216 @@
+0.2
+	0.2.20070116a
+		package-list を追加
+		Eclipse の設定で Javadoc チェックを OFF
+		eclipse のフォーマッターの enum の折り返しを変更
+		パッケージ cvs を追加
+	0.2.20070301a
+		SimpleCSVListener の receiveEndCSV() 呼び出し時に、行の残りを処理していないバグを修正
+	0.2.20070302a
+		Statuses で正しく receiveEndColumn() を通知していないバグを修正
+	0.2.20070426a
+		SystemUtilities の sumHashCodes(Object[]) でパラメータに null が含まれる場合、 0 を使用するように修正
+	0.2.20070510a
+		SocketAcceptor の accept() で、例外発生時に必ずソケットを閉じるように修正
+	0.2.20070517a
+		SocketAcceptor の accept() で、 ShutdownNotice スロー時の間違いを修正
+		Server に isAcceptorShutdowned() を追加
+	0.2.20070813a
+		Class クラスの空配列 CLASS_EMPTY_ARRAY を SystemUtilities に追加
+		getPrimitiveClass(String) を SystemUtilities に追加
+	0.2.20070822a
+		SystemUtilities.getPrimitiveClass(String) がプリミティブ型配列でも変換できるように修正
+	0.2.20071127a
+		LineIterator に Iterable を追加
+
+0.3
+	0.3.20080221a
+		SimpleFileTraverser の start(File) を final ではなくなるように変更
+		util パッケージに EasyWrapper と Parameters を追加
+		xml パッケージを追加し、あわせて XPathNode と XPathException を追加
+		SystemUtilities に convertPrimitiveClassToWrapperClass(Class) を追加
+	0.3.20080222a
+		SystemUtilities に toString(Object) を追加し、デフォルトのデバッグ用メソッドとして該当するクラスに適用
+		static メソッドしか使用しないクラスにプライベートコンストラクタを追加
+	0.3.20080325a
+		SoftReferenceCache にデフォルトコンストラクタを追加
+		SoftReferenceCache の remove(K) 内で SoftReferenceValue.clear() を呼ぶように修正
+		SoftReferenceCache の縮小用スレッドに名前を付けた
+	0.3.20080417a
+		CollectionUtilities に型推論による各コレクションクラスのコンストラクタを追加
+		CollectionMap に型推論によるコンストラクタ代用メソッドを追加
+		MapMap に型推論によるコンストラクタ代用メソッドを追加
+		CollectionMapMap に型推論によるコンストラクタ代用メソッドを追加
+		LRUCache に型推論によるコンストラクタ代用メソッドを追加
+		SynchronizedCache に型推論によるコンストラクタ代用メソッドを追加
+		SoftReferenceCache に型推論によるコンストラクタ代用メソッドを追加
+		CollectionMap から C 型パラメータを削除
+		CollectionMapMap から C 型パラメータを削除
+	0.3.20080513a
+		SimpleCSVListener の lineNo カウント方法の間違いを修正
+	0.3.20080606a
+		より厳しくジェネリックに対応
+	0.3.20080708a
+		Releaseable を削除し、関連クラスを修正
+		QueueElement の remove() に初期化する処理を追加
+		LRUQueue のデフォルト値をなくすように修正
+	0.3.20080718a
+		Queue のロジックを簡略化し、関連クラスを修正
+	0.3.20080908a
+		BindingClassLoader に loadClass(String, boolean) を追加し、 findLoadedOrDefineClass(String) のリソース取得方法の間違いを修正
+		SystemUtilities に 新しいクラスパスを含めて実行するためのメソッド execute(String, String[], URL...) を追加
+		AccessKeyUtilities を新たに追加
+		Digester を新たに追加
+		LoggingManager を新たに追加
+		CollectionMap の remove(Object) のパラメータを Object から総称型に修正
+		CollectionMap に containsKey(K) を追加
+		CollectionMapMap に containsKey(K1) を追加
+		MapMap に containsKey(K1) を追加
+		IOUtilities にインスタンス化不可のためのプライベートコンストラクタ追加
+		IOUtilities から不要になった toString() 除去
+	0.3.20080909a
+		MS932 の用途を限定するように修正
+	0.3.20080912a
+		MS932 を CP932 に名称変更、メソッド名変更、逆変換メソッドを復活させた
+	0.3.20081021a
+		Eclipse3.4 に変更
+	0.3.20081023a
+		Digester からごみを除去
+		SystemUtilities に care(String), isAvailable(String), isAvailable(String...), isAllValuesAvailable(String...) を追加
+		Constainer を追加
+	0.3.20081126a
+		SystemUtilities に複数の cast メソッドを追加
+	0.3.20081127a
+		SystemUtilities の各 cast メソッドを CollectionUtilities に移動
+		CollectionUtilities に各コレクションの castTo... を追加
+	0.3.20081208a
+		ClassBuilderUtilities を新たに追加
+		CollectionMap と CollectionMapMap に clone() を追加
+	0.3.20090119a
+		Digester で使用している StringBuffer を StringBuilder に変更し、 for 文も変更
+		IOUtilities に getResourceAsFile(String) と getResourceAsFile(URL) を追加
+	0.3.20090618a
+		CollectionUtilities に各種代用コンストラクタを追加
+		可変長引数の代用コンストラクタの名称の末尾に Of を追加し、コピーコンストラクタと混同されないように修正
+		NumberUtilities を追加
+	0.3.20090911a
+		ConverterUtilities の createConvertTable(String) 内で使用している split(String) を split(String, int) に変更
+		パッケージ revision とその構成クラスを追加
+	0.3.20090914a
+		Revision に toString() を追加
+		SimpleRevisionRepository の リビジョン番号が上がり続けるバグを修正
+	0.3.20090924a
+		Process を Precondition に変更
+	0.3.20090928a
+		SystemUtilities に equals(Object[], Object[]) を追加
+	0.3.20091112a
+		ResourceUtilities の getLocalFile(URL) を getLocalFile(URL, String) に変更
+	0.3.20091120a
+		CSVParser に parse(InputStream, String, CSVListener) を追加
+	0.3.20091209a
+		固定長フォーマット入出力パッケージ flf を追加
+		CollectiohnUtilities に iterable(Iterator<T>) を追加
+	0.3.20100212a
+		SoftReferenceCache の削除用スレッドをデーモンスレッドに変更
+	0.3.20100506a
+		FixedLengthFieldsFormat に getLineLength() と getFields() を追加
+	0.3.20100618a
+		ImageUtilities を追加
+	0.3.20100629a
+		ImageUtilities の shrink(String, int, File, File) を修正
+	0.3.20100721a
+		ImageUtilities の縮小時に指定された長辺より元画像が小さい場合、縮小しないように変更
+		上記要件のために ImageUtilities に scale(String, int, File, File) を追加
+	0.3.20100812a
+		IOUtilities の、各 close メソッドの例外用に CloseFailedException を追加
+		IOUtilities に readChars(Reader), readChars(Reader, char[], int), sendChars(Reader, Writer), createLineIterable(Reader), createLineIterator(Reader) を追加
+	0.3.20100817a
+		FixedLengthFieldsFormat の formatLine(String[], byte[]) を修正
+	0.3.20100917a
+		CP932 のコメント修正
+		SQLProxyBuilder を追加
+	0.3.20100922a
+		sql パッケージを用意し、関連クラスを移動
+		JDBCCloseFailedException を追加し、 JDBCUtilities で使用するように変更
+		ResultSetIterator を追加
+		BreakpointFinder を追加
+	0.3.20100924a
+		CollectionUtilities に join(String, Object...) を追加
+	0.3.20101004a
+		EncodablePropertiesFactory をエンコード指定可能に修正
+	0.3.20101021a
+		CalendarUtilities を追加
+	0.3.20110406a
+		CollectionUtilities に配列操作用の unshift, push, shift, pop を各タイプ分追加
+		IOUtilities に copy(File, File) を追加
+	0.3.20110712a
+		Digester の digest(String) を digest(String, String) に変更
+		SimpleFileTraverser に canExecute(File) を追加
+		LineReader に Charset を設定できるようにし、関連クラスも修正
+	0.3.20110801a
+		SimpleCSVListener.ParseException に getParsed() を追加
+	0.3.20110909a
+		各ユーティリティクラスを U に統合
+	0.3.20110912a
+		U に formatDate(String, Date), parseDate(String, String) を追加
+	0.3.20111116a
+		U の parseDate(String, String) が ParseException をスローしないように変更
+		U に parseDateStrictly(String, String) を追加
+	0.3.20120515a
+		U の BUFFER_SIZE を public に変更
+		SimpleRevisionRepository の lock(K key) と unlock(K key) を正しく要素でロック処理するように修正
+	0.3.20121115a
+		SimpleResourceReader を修正
+		IterableIterator, SimpleIterableIterator, TextReader を追加
+		U に readBytes(InputStream, byte[]) と readChars(Reader, char[]) を追加し、両 concatByteArray を public に変更
+		ByteList を追加
+		ExifReader, IFD, IFDUtilities, IllegalExifException を追加
+		CSVParser に parse(InputStream), parse(InputStream, String), parse(Reader) を追加
+		LineReader, LoggingManager, CalendarUtilities, TextReader, PropertiesReplacer をリファクタリング
+		U の convert(Class<?> castTo, Object value) を convert(Class<T> castTo, Object value) に修正
+	0.3.20121126a
+		U に cast(Object value) を追加
+	0.3.20130213a
+		TextReader に TextReader(InputStream) を追加
+		TextReader の各メソッドに対応する Charset を指定できるメソッドを追加
+		U の getLocalFile(URL, String) をリファクタリング
+		U に getJARFile(Class<?>) を追加
+
+0.4
+	0.4.20130614a
+		Java7 対応
+	0.4.20130719a
+		ImageUtilities のメモリリーク修正
+	0.4.20140122a
+		XPathNode のコンストラクタを変更、 selectNodes(String), selectNode(String) の、タグや属性の存在チェックを除去
+		XPathNode に getTextContent(), getNodeName() を追加
+	0.4.20140618a
+		SocketAcceptor をリファクタリング
+		U に box, unbox メソッドを追加
+		U の各 close を Closeable に変更
+		flush(Flushable) を追加
+		IOStream を Closeable 継承に変更
+	0.4.20140702a
+		CalendarUtilities の getHolidayName(Calendar) に「山の日」追加
+	0.4.20140806a
+		U に toBytes(int), toInt(byte[]) を追加
+		U の sumHashCodes(int[]), sumHashCodes(Object[]) を sumHashCodes(int...), sumHashCodes(Object...) に変更
+	0.4.20140909a
+		Worker に ID を設定し、それを ServiceHandler に伝えるように変更
+		U に 各プリミティブ型の Iterator から配列変換メソッドを追加
+	0.4.20140919a
+		U.sumHashCodes(int...) を U.sumHashCodesFrom(int...) に変更
+		Day を追加
+		CalendarUtilities に getHolidayName(Day) を追加
+	0.4.20140925a
+		HoursMinutes を追加
+	0.4.20141003a
+		U の sumHashCodes を元に戻し、新たに sumHashCodesOf(int...) を追加
+	0.4.20141127a
+		U に care(String[]) を追加
+		文字コードを UTF-8 に変更
+		SimpleResourceReader の各メソッドに対応した Charset を受け取るメソッドを追加
+		ClassBuilderUtilities の readTemplate(Class<?>) を readTemplate(Class<?> target, String) に変更
+
+HEAD
+	*.*.*********

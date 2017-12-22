@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="substrate" default="all">
+
+	<target name="all" depends="cleanup, compile">
+		<copy todir="build">
+			<fileset dir="src" includes="**/*.java" />
+		</copy>
+		<jar basedir="build" jarfile="substrate.jar" />
+	</target>
+
+	<target name="class-jar" depends="cleanup, compile">
+		<copy file="src/substrate-version.txt" todir="build" />
+		<copy todir="build">
+			<fileset dir="src" includes="**/resources/*" />
+		</copy>
+		<jar basedir="build" jarfile="substrate.jar" />
+	</target>
+
+	<target name="src-jar" depends="cleanup">
+		<jar basedir="src" jarfile="substrate-src.jar" />
+	</target>
+
+	<target name="javadoc" depends="cleanup">
+		<mkdir dir="substrate-api" />
+		<javadoc packagenames="jp.ats.substrate.*" sourcepath="src" destdir="substrate-api" windowtitle="Substrate API" doctitle="Substrate API">
+			<link offline="true" href="http://java.sun.com/j2se/1.5.0/ja/docs/ja/api/" packagelistLoc="." />
+		</javadoc>
+		<zip zipfile="substrate-api.zip" basedir="substrate-api" />
+	</target>
+
+	<target name="cleanup">
+		<delete dir="build" />
+		<delete dir="substrate-api" />
+		<delete file="substrate.jar" />
+		<delete file="substrate-src.jar" />
+		<delete file="substrate-api.zip" />
+	</target>
+
+	<target name="compile">
+		<mkdir dir="build" />
+		<javac srcdir="src" destdir="build" debug="true" optimize="true" deprecation="true" encoding="UTF-8" includeantruntime="false">
+			<include name="**/*.java" />
+		</javac>
+		<copy file="src/substrate-version.txt" todir="build" />
+		<copy todir="build">
+			<fileset dir="src" includes="**/resources/*" />
+		</copy>
+	</target>
+</project>
